@@ -133,7 +133,7 @@ const getTrayBinPath = async (debug: boolean = false, copyDir: boolean | string 
   }
   return binPath
 }
-const CHECK_STR = ' (√)'
+const CHECK_STR = ' ✔'
 function updateCheckedInLinux(item: MenuItem) {
   if (process.platform !== 'linux') {
     return
@@ -141,7 +141,7 @@ function updateCheckedInLinux(item: MenuItem) {
   if (item.checked) {
     item.title += CHECK_STR
   } else {
-    item.title = (item.title || '').replace(RegExp(CHECK_STR + '$'), '')
+    item.title = (item.title || '').replace(CHECK_STR, '')
   }
   if (item.items != null) {
     item.items.forEach(updateCheckedInLinux)
